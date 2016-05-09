@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arctransport;
+package arctransport.metier;
 
 /**
  *
  * @author chloe.trachsel
  */
-public class Console {
+public class Vehicule {
     
 }
