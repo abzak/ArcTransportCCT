@@ -9,6 +9,9 @@ package arctransport.metier;
  *
  * @author chloe.trachsel
  */
+
+//Thibault Daucourt
+
 public class Course {
     
 }
