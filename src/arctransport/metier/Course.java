@@ -12,7 +12,6 @@ import java.util.Objects;
  *
  * @author Thibault Daucourt
  */
-
 public class Course {
 
     private int distance; //en km, distance >= 0
@@ -20,8 +19,8 @@ public class Course {
     private Date dateFin; // date format a définir
     private float prix; // prix par minute
     private Chauffeur chauffeur;
-    private  Vehicule vehicule;
-     
+    private Vehicule vehicule;
+
 
     /*Taxe de base
      0 - 5 km --> 10.-
@@ -45,8 +44,7 @@ public class Course {
 
     public Course() {
     }
-    
-    
+
     public Course(int distance, Date dateDebut, Date dateFin, float prix) {
         this.distance = distance;
         this.dateDebut = dateDebut;
@@ -60,7 +58,6 @@ public class Course {
         this.vehicule = vehicule;
     }
 
-    
     public int getDistance() {
         return distance;
     }
@@ -91,6 +88,22 @@ public class Course {
 
     public void setPrix(int prix) {
         this.prix = prix;
+    }
+
+    public Chauffeur getChauffeur() {
+        return chauffeur;
+    }
+
+    public void setChauffeur(Chauffeur chauffeur) {
+        this.chauffeur = chauffeur;
+    }
+
+    public Vehicule getVehicule() {
+        return vehicule;
+    }
+
+    public void setVehicule(Vehicule vehicule) {
+        this.vehicule = vehicule;
     }
 
     @Override
@@ -127,7 +140,4 @@ public class Course {
         return true;
     }
 
-    
-    
-    
 }

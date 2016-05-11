@@ -96,5 +96,13 @@ public class Vehicule {
         return true;
     }
     
+    public boolean findByMatricule(String matriculeO){
+        boolean ok = false;
+        if (matriculeO.equals(this.matricule)) {
+            ok = true;
+        }
+        return ok ;
+    }
+    
     
 }

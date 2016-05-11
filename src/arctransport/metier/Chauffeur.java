@@ -53,13 +53,15 @@ public class Chauffeur {
         if (!Objects.equals(this.matricule, other.matricule)) {
             return false;
         }
-        if (!Objects.equals(this.nom, other.nom)) {
-            return false;
-        }
-        if (!Objects.equals(this.prenom, other.prenom)) {
-            return false;
-        }
         return true;
+    }
+    
+    public boolean findByMatricule(String matriculeO){
+        boolean ok = false;
+        if (matriculeO.equals(this.matricule)) {
+            ok = true;
+        }
+        return ok ;
     }
     
     public float getChiffreDAffaire(){
