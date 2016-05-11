@@ -6,42 +6,46 @@
 package arctransport.metier;
 
 import java.util.Date;
+import java.util.Objects;
 
 /**
  *
- * @author chloe.trachsel
+ * @author Thibault Daucourt
  */
 
-//Thibault Daucourt
-
 public class Course {
+
     private int distance; //en km, distance >= 0
     private Date dateDebut; // date format a définir
     private Date dateFin; // date format a définir
-    private float prix ; // prix par minute
+    private float prix; // prix par minute
+    private Chauffeur chauffeur;
+    private  Vehicule vehicule;
+     
 
-    
-        
-        /*Taxe de base
-        0 - 5 km --> 10.-
-        6 - 10km --> 8.-
-         > 10 km --> 5.-
-        */
-
+    /*Taxe de base
+     0 - 5 km --> 10.-
+     6 - 10km --> 8.-
+     > 10 km --> 5.-
+     */
     // retourne la valeur de la taxe de la course
-    private int CalculerTaxe(){
+    private int CalculerTaxe() {
         if (distance > 10) {
             return 5;
-        } else if(distance > 5) {
+        } else if (distance > 5) {
             return 8;
-        }else {
+        } else {
             return 10;
         }
     }
-    
-    public float RecetteCourse(){
+
+    public float RecetteCourse() {
         return distance * prix + this.CalculerTaxe();
     }
+
+    public Course() {
+    }
+    
     
     public Course(int distance, Date dateDebut, Date dateFin, float prix) {
         this.distance = distance;
@@ -50,6 +54,13 @@ public class Course {
         this.prix = prix;
     }
 
+    public Course(int distance, Date dateDebut, Date dateFin, float prix, Chauffeur chauffeur, Vehicule vehicule) {
+        this(distance, dateDebut, dateFin, prix);
+        this.chauffeur = chauffeur;
+        this.vehicule = vehicule;
+    }
+
+    
     public int getDistance() {
         return distance;
     }
@@ -81,12 +92,42 @@ public class Course {
     public void setPrix(int prix) {
         this.prix = prix;
     }
-    
-    
-        
-        
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 23 * hash + Objects.hashCode(this.dateDebut);
+        hash = 23 * hash + Objects.hashCode(this.dateFin);
+        hash = 23 * hash + Objects.hashCode(this.chauffeur);
+        hash = 23 * hash + Objects.hashCode(this.vehicule);
+        return hash;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Course other = (Course) obj;
+        if (!Objects.equals(this.dateDebut, other.dateDebut)) {
+            return false;
+        }
+        if (!Objects.equals(this.dateFin, other.dateFin)) {
+            return false;
+        }
+        if (!Objects.equals(this.chauffeur, other.chauffeur)) {
+            return false;
+        }
+        if (!Objects.equals(this.vehicule, other.vehicule)) {
+            return false;
+        }
+        return true;
+    }
+
+    
     
     
 }
