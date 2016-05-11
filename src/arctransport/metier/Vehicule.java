@@ -51,7 +51,7 @@ public class Vehicule {
         return prixMinute;
     }
 
-    public List<Course> getListeCourses() {
+    public List<Course> getCourses() {
         return listeCourses;
     }
 

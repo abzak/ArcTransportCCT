@@ -17,7 +17,6 @@ public class Course {
     private int distance; //en km, distance >= 0
     private Date dateDebut; // date format a définir
     private Date dateFin; // date format a définir
-    private float prix; // prix par minute
     private Chauffeur chauffeur;
     private Vehicule vehicule;
 
@@ -28,7 +27,7 @@ public class Course {
      > 10 km --> 5.-
      */
     // retourne la valeur de la taxe de la course
-    private int CalculerTaxe() {
+    private int calculerTaxe() {
         if (distance > 10) {
             return 5;
         } else if (distance > 5) {
@@ -38,22 +37,22 @@ public class Course {
         }
     }
 
-    public float RecetteCourse() {
-        return distance * prix + this.CalculerTaxe();
+    public float getPrixCourse() {
+        long diffMinutes = (dateFin.getTime() - dateDebut.getTime()) / (60 * 1000) % 60;
+        return  (diffMinutes * vehicule.getPrixMinute() )+ this.calculerTaxe();
     }
 
     public Course() {
     }
 
-    public Course(int distance, Date dateDebut, Date dateFin, float prix) {
+    public Course(int distance, Date dateDebut, Date dateFin) {
         this.distance = distance;
         this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.prix = prix;
+        this.dateFin = dateFin; 
     }
 
-    public Course(int distance, Date dateDebut, Date dateFin, float prix, Chauffeur chauffeur, Vehicule vehicule) {
-        this(distance, dateDebut, dateFin, prix);
+    public Course(int distance, Date dateDebut, Date dateFin,  Chauffeur chauffeur, Vehicule vehicule) {
+        this(distance, dateDebut, dateFin);
         this.chauffeur = chauffeur;
         this.vehicule = vehicule;
     }
@@ -80,14 +79,6 @@ public class Course {
 
     public void setDateFin(Date dateFin) {
         this.dateFin = dateFin;
-    }
-
-    public float getPrix() {
-        return prix;
-    }
-
-    public void setPrix(int prix) {
-        this.prix = prix;
     }
 
     public Chauffeur getChauffeur() {
