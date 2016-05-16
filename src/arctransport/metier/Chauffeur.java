@@ -21,10 +21,8 @@ public class Chauffeur {
     private String matricule;
     private String nom;
     private String prenom;
-    private List<Course> courses;
 
-    public Chauffeur() {
-        courses = new ArrayList<>();
+    public Chauffeur() { 
     }
 
     public Chauffeur(String matricule, String nom, String prenom) {
@@ -91,15 +89,5 @@ public class Chauffeur {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
-
-    public List<Course> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(List<Course> courses) {
-        this.courses = courses;
-    }
-    
-    
-    
+  
 }

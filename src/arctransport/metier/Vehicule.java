@@ -5,7 +5,6 @@
  */
 package arctransport.metier;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,9 +27,7 @@ public class Vehicule {
     private int prixMinute;
     private List<Course> listeCourses;
 
-    public Vehicule() {
-        listeCourses = new ArrayList<>();
-    }
+    public Vehicule() {}
 
     public Vehicule(int matricule, String designation, int prixMinute, Course listeCourses) {
         this();
