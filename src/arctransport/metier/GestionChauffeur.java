@@ -5,6 +5,7 @@
  */
 package arctransport.metier;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,8 +14,11 @@ import java.util.List;
  */
 public class GestionChauffeur {
     
-    
-    private List<Chauffeur> chauffeurs;
+    private final List<Chauffeur> chauffeurs;
+
+    public GestionChauffeur() {
+        this.chauffeurs =  new ArrayList<>();
+    }
     
     protected void ajouteChauffeur(Chauffeur c) {
         chauffeurs.add(c);

@@ -31,7 +31,6 @@ public class GestionCourses {
 
     public void removeCourse(Course crs) {
         mapCourseParChauffeur.get(crs.getChauffeur().getMatricule()).remove(crs);
-        crs.getVehicule().getCourses().remove(crs);
     }
 
     public List<Course> gettAllCourses() {
@@ -41,14 +40,25 @@ public class GestionCourses {
         });
         return courses;
     }
-    
-    public List<Course> getCourseByChauffeur(String matricule){
-       return mapCourseParChauffeur.get(matricule);
+
+    public List<Course> getCourseByChauffeur(String matricule) {
+        return mapCourseParChauffeur.get(matricule);
     }
-    
-    public void initializeListChauffeur(String matricule){
+
+    public void initializeListChauffeur(String matricule) {
         mapCourseParChauffeur.put(matricule, new ArrayList<>());
     }
-    
+
+    public List<Course> getCoursesByVehicule(String matricule) {
+        List courses = new ArrayList<>();
+        mapCourseParChauffeur.entrySet().stream().forEach((entry) -> {
+            for (Course course : entry.getValue()) {
+                if (course.getVehicule().compareMatricule(matricule)) {
+                    courses.add(course);
+                }
+            }
+        });
+        return courses;
+    }
 
 }

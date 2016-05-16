@@ -5,6 +5,7 @@
  */
 package arctransport.metier;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,10 +13,13 @@ import java.util.List;
  * @author zakariae.chentouf
  */
 public class GestionVehicule {
-    
-    
-    private List<Vehicule> vehicules;
-    
+
+    private final List<Vehicule> vehicules;
+
+    public GestionVehicule() {
+        this.vehicules = new ArrayList<>();
+    }
+     
      public void ajouteVehicule(Vehicule v) {
         vehicules.add(v);
     }
@@ -23,7 +27,7 @@ public class GestionVehicule {
     public Vehicule findVehiculeByMatricule(String matricule) {
         Vehicule vRecherche = null;
         for (Vehicule v : vehicules) {
-            if (v.findByMatricule(matricule)) {
+            if (v.compareMatricule(matricule)) {
                 vRecherche = v;
                 break;
             }

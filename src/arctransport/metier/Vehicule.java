@@ -25,8 +25,7 @@ public class Vehicule {
     private int matricule;
     private String designation;
     private int prixMinute;
-    private List<Course> listeCourses;
-
+    
     public Vehicule() {}
 
     public Vehicule(int matricule, String designation, int prixMinute, Course listeCourses) {
@@ -48,10 +47,7 @@ public class Vehicule {
         return prixMinute;
     }
 
-    public List<Course> getCourses() {
-        return listeCourses;
-    }
-
+    
     public void setMatricule(int matricule) {
         this.matricule = matricule;
     }
@@ -64,9 +60,6 @@ public class Vehicule {
         this.prixMinute = prixMinute;
     }
 
-    public void setListeCourses(List<Course> listeCourses) {
-        this.listeCourses = listeCourses;
-    }
 
     @Override
     public int hashCode() {
@@ -93,7 +86,7 @@ public class Vehicule {
         return true;
     }
     
-    public boolean findByMatricule(String matriculeO){
+    public boolean compareMatricule(String matriculeO){
         boolean ok = false;
         if (matriculeO.equals(this.matricule)) {
             ok = true;
