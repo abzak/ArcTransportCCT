@@ -130,5 +130,17 @@ public class Course {
         }
         return true;
     }
+    
+    
+    // teste si le début de la course testé est avant lé fin de la course source
+    // et test si la fin de la course testé est après le début de la course source
+    // pour déterminer si elles se chevauchent
+    public Boolean isMeanwhile(Course courseTested){    
+         if(courseTested.dateDebut.before(dateFin) && courseTested.dateFin.after(dateDebut)){
+             return true;
+         }else{
+             return true;
+         }
+     }   
 
 }
