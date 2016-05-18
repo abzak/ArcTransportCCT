@@ -32,6 +32,9 @@ public class IHMChauffeurs extends javax.swing.JFrame {
         ajouterChauffeur = new javax.swing.JButton();
         updateChauffeur = new javax.swing.JButton();
         deleteChauffeur = new javax.swing.JButton();
+        Matricule = new javax.swing.JLabel();
+        Nom = new javax.swing.JLabel();
+        Prenom = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,9 +47,15 @@ public class IHMChauffeurs extends javax.swing.JFrame {
 
         ajouterChauffeur.setText("Ajout chauffeur");
 
-        updateChauffeur.setText("Modifier chauffeur");
+        updateChauffeur.setText("Sauvegarder");
 
         deleteChauffeur.setText("Supprimer chauffeur");
+
+        Matricule.setText("Matricule");
+
+        Nom.setText("Nom");
+
+        Prenom.setText("Prenom");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,12 +64,24 @@ public class IHMChauffeurs extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(79, 79, 79)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ajouterChauffeur)
-                    .addComponent(updateChauffeur)
-                    .addComponent(deleteChauffeur))
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Nom)
+                            .addComponent(Prenom))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                        .addComponent(deleteChauffeur)
+                        .addGap(34, 34, 34))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Matricule)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ajouterChauffeur)
+                        .addGap(45, 45, 45))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(updateChauffeur)
+                .addGap(43, 43, 43))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -68,13 +89,24 @@ public class IHMChauffeurs extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ajouterChauffeur)
-                        .addGap(18, 18, 18)
-                        .addComponent(updateChauffeur)
-                        .addGap(18, 18, 18)
-                        .addComponent(deleteChauffeur))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ajouterChauffeur)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(Matricule)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(29, 29, 29)
+                                .addComponent(deleteChauffeur))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(Nom)
+                                .addGap(18, 18, 18)
+                                .addComponent(Prenom))))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addGap(79, 79, 79)
+                .addComponent(updateChauffeur)
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,6 +148,9 @@ public class IHMChauffeurs extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Matricule;
+    private javax.swing.JLabel Nom;
+    private javax.swing.JLabel Prenom;
     private javax.swing.JButton ajouterChauffeur;
     private javax.swing.JButton deleteChauffeur;
     private javax.swing.JScrollPane jScrollPane1;

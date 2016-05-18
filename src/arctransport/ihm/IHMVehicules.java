@@ -30,8 +30,11 @@ public class IHMVehicules extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listeVehicules = new javax.swing.JList<>();
         addVehicule = new javax.swing.JButton();
-        updateVehicule = new javax.swing.JButton();
+        Sauvegarder = new javax.swing.JButton();
         deleteVehicule = new javax.swing.JButton();
+        Matricule = new javax.swing.JLabel();
+        Désignation = new javax.swing.JLabel();
+        PrixMinute = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,9 +47,15 @@ public class IHMVehicules extends javax.swing.JFrame {
 
         addVehicule.setText("Ajout vehicule");
 
-        updateVehicule.setText("Modifier vehicule");
+        Sauvegarder.setText("Sauvegarder");
 
         deleteVehicule.setText("Supprimer vehicule");
+
+        Matricule.setText("Matricule");
+
+        Désignation.setText("Désignation");
+
+        PrixMinute.setText("Prix par minute");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,12 +64,24 @@ public class IHMVehicules extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(46, 46, 46)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
+                .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addVehicule)
-                    .addComponent(updateVehicule)
-                    .addComponent(deleteVehicule))
-                .addContainerGap(104, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Matricule)
+                            .addComponent(PrixMinute))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(deleteVehicule)
+                            .addComponent(addVehicule)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Désignation)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Sauvegarder)
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -69,13 +90,19 @@ public class IHMVehicules extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(addVehicule)
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addVehicule)
+                            .addComponent(Matricule))
                         .addGap(18, 18, 18)
-                        .addComponent(updateVehicule)
+                        .addComponent(Désignation)
                         .addGap(18, 18, 18)
-                        .addComponent(deleteVehicule)))
-                .addContainerGap(187, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(deleteVehicule)
+                            .addComponent(PrixMinute))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addComponent(Sauvegarder)
+                .addGap(71, 71, 71))
         );
 
         pack();
@@ -117,10 +144,13 @@ public class IHMVehicules extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Désignation;
+    private javax.swing.JLabel Matricule;
+    private javax.swing.JLabel PrixMinute;
+    private javax.swing.JButton Sauvegarder;
     private javax.swing.JButton addVehicule;
     private javax.swing.JButton deleteVehicule;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> listeVehicules;
-    private javax.swing.JButton updateVehicule;
     // End of variables declaration//GEN-END:variables
 }

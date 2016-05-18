@@ -30,8 +30,13 @@ public class IHMcourses extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         listeCourse = new javax.swing.JList<>();
         addCourse = new javax.swing.JButton();
-        updateCourse = new javax.swing.JButton();
+        Sauvegarder = new javax.swing.JButton();
         deleteCourse = new javax.swing.JButton();
+        Distance = new javax.swing.JLabel();
+        DateDebut = new javax.swing.JLabel();
+        DateFin = new javax.swing.JLabel();
+        Chauffeur = new javax.swing.JLabel();
+        Vehicule = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,9 +54,19 @@ public class IHMcourses extends javax.swing.JFrame {
             }
         });
 
-        updateCourse.setText("Modifier course");
+        Sauvegarder.setText("Sauvegarder");
 
         deleteCourse.setText("Supprimer course");
+
+        Distance.setText("Distance");
+
+        DateDebut.setText("Date de début");
+
+        DateFin.setText("Date de fin");
+
+        Chauffeur.setText("Chauffeur");
+
+        Vehicule.setText("Véhicule");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,28 +75,54 @@ public class IHMcourses extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(addCourse)
-                    .addComponent(updateCourse)
-                    .addComponent(deleteCourse))
-                .addContainerGap(279, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DateDebut)
+                            .addComponent(DateFin))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 185, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addCourse)
+                            .addComponent(deleteCourse))
+                        .addGap(57, 57, 57))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Distance)
+                            .addComponent(Chauffeur)
+                            .addComponent(Vehicule))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Sauvegarder)
+                .addGap(47, 47, 47))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(addCourse)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(addCourse)
+                                .addGap(37, 37, 37)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(deleteCourse)
+                                    .addComponent(DateFin)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Distance)
+                                .addGap(26, 26, 26)
+                                .addComponent(DateDebut)))
                         .addGap(18, 18, 18)
-                        .addComponent(updateCourse)
+                        .addComponent(Chauffeur)
                         .addGap(18, 18, 18)
-                        .addComponent(deleteCourse)))
-                .addContainerGap(298, Short.MAX_VALUE))
+                        .addComponent(Vehicule)))
+                .addGap(47, 47, 47)
+                .addComponent(Sauvegarder)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
@@ -128,10 +169,15 @@ public class IHMcourses extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Chauffeur;
+    private javax.swing.JLabel DateDebut;
+    private javax.swing.JLabel DateFin;
+    private javax.swing.JLabel Distance;
+    private javax.swing.JButton Sauvegarder;
+    private javax.swing.JLabel Vehicule;
     private javax.swing.JButton addCourse;
     private javax.swing.JButton deleteCourse;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> listeCourse;
-    private javax.swing.JButton updateCourse;
     // End of variables declaration//GEN-END:variables
 }

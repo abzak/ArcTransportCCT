@@ -26,13 +26,30 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="146" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="addVehicule" min="-2" max="-2" attributes="0"/>
-                  <Component id="updateVehicule" min="-2" max="-2" attributes="0"/>
-                  <Component id="deleteVehicule" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="Matricule" min="-2" max="-2" attributes="0"/>
+                          <Component id="PrixMinute" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="104" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="deleteVehicule" min="-2" max="-2" attributes="0"/>
+                          <Component id="addVehicule" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="Désignation" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="104" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="Sauvegarder" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -43,15 +60,23 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" min="-2" pref="164" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="addVehicule" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="addVehicule" min="-2" max="-2" attributes="0"/>
+                          <Component id="Matricule" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="updateVehicule" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="deleteVehicule" min="-2" max="-2" attributes="0"/>
+                      <Component id="Désignation" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="deleteVehicule" min="-2" max="-2" attributes="0"/>
+                          <Component id="PrixMinute" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="187" max="32767" attributes="0"/>
+              <EmptySpace pref="91" max="32767" attributes="0"/>
+              <Component id="Sauvegarder" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -87,14 +112,29 @@
         <Property name="text" type="java.lang.String" value="Ajout vehicule"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="updateVehicule">
+    <Component class="javax.swing.JButton" name="Sauvegarder">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Modifier vehicule"/>
+        <Property name="text" type="java.lang.String" value="Sauvegarder"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="deleteVehicule">
       <Properties>
         <Property name="text" type="java.lang.String" value="Supprimer vehicule"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="Matricule">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Matricule"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="D&#xe9;signation">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="D&#xe9;signation"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PrixMinute">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Prix par minute"/>
       </Properties>
     </Component>
   </SubComponents>
