@@ -139,7 +139,7 @@ public class Course {
          if(courseTested.dateDebut.before(dateFin) && courseTested.dateFin.after(dateDebut)){
              return true;
          }else{
-             return true;
+             return false;
          }
      }   
 
