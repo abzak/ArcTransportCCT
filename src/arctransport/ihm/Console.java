@@ -5,11 +5,21 @@
  */
 package arctransport.ihm;
 
+import arctransport.controller.Controller;
+
 /**
  *
  * @author chloe.trachsel
  */
 public class Console {
+    
+    private Controller ctrl;
+
+    public Console(Controller ctrl) {
+        this.ctrl = ctrl;
+    }
+    
+    
     public void AfficheMenuFlotte(){
         System.out.println("");
         System.out.println("-- Menu Principale de la Flotte--");
@@ -51,5 +61,9 @@ public class Console {
         System.out.println("[] -- Supprimer un Véhicule");
         System.out.println("[] -- retour");
         System.out.println("");
+    }
+
+    public void start() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

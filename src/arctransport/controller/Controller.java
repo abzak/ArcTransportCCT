@@ -5,10 +5,20 @@
  */
 package arctransport.controller;
 
+import arctransport.metier.GestionFlote;
+
 /**
  *
  * @author zakariae.chentouf
  */
 public class Controller {
+    
+    private GestionFlote gf;
+
+    public Controller(GestionFlote gf) {
+        this.gf = gf;
+    }
+    
+    
     
 }
