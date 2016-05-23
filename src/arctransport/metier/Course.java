@@ -5,6 +5,8 @@
  */
 package arctransport.metier;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Objects;
 
@@ -141,6 +143,20 @@ public class Course {
          }else{
              return false;
          }
-     }   
+     }
+    
+    public String toString(){
+        StringBuilder string = new StringBuilder();
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
+        
+        string.append(df.format(dateDebut));
+        string.append(" - ");
+        string.append(df.format(dateFin));
+        string.append(" / ");
+        string.append(distance);
+        string.append(" km");
+        
+        return string.toString();
+    }
 
 }

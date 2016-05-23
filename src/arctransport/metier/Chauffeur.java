@@ -87,5 +87,17 @@ public class Chauffeur {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+    
+    public String toString(){
+        StringBuilder string = new StringBuilder();
+        
+        string.append(matricule);
+        string.append(", ");
+        string.append(nom);
+        string.append(" ");
+        string.append(prenom);
+        
+        return string.toString();
+    }
   
 }

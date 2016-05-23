@@ -28,7 +28,7 @@ public class Vehicule {
     
     public Vehicule() {}
 
-    public Vehicule(int matricule, String designation, int prixMinute, Course listeCourses) {
+    public Vehicule(int matricule, String designation, int prixMinute) {
         this();
         this.matricule = matricule;
         this.designation = designation;
@@ -93,6 +93,20 @@ public class Vehicule {
         }
         return ok ;
     }
+    
+    public String toString(){
+        StringBuilder string = new StringBuilder();
+        
+        string.append(matricule);
+        string.append(", ");
+        string.append(designation);
+        string.append(", ");
+        string.append(prixMinute);
+        string.append(" chf/min");
+        
+        return string.toString();
+    }
+
     
     
 }
