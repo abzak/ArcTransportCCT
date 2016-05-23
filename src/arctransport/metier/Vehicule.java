@@ -86,9 +86,9 @@ public class Vehicule {
         return true;
     }
     
-    public boolean compareMatricule(String matriculeO){
+    public boolean compareMatricule(int matriculeO){
         boolean ok = false;
-        if (matriculeO.equals(this.matricule)) {
+        if (matriculeO == this.matricule) {
             ok = true;
         }
         return ok ;
