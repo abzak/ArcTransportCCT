@@ -30,9 +30,9 @@ public class Application {
         GestionFlote gf = new GestionFlote();
         Controller ctrl = new Controller(gf);
         Console cs = new Console(ctrl);
-        //cs.start();
+        cs.start();
         
-        Chauffeur test = new Chauffeur("12","jean","bonneau");
+        /*Chauffeur test = new Chauffeur("12","jean","bonneau");
         System.out.println(test.toString());
         
         Vehicule test2 = new Vehicule(121,"opel saphira",42);
@@ -43,7 +43,7 @@ public class Application {
 	String dateInString = "07 07, 2013 12:10:56";
         String dateInString2 = "07 07, 2013 12:15:56";
         Course test3 = new Course(42, formatter.parse(dateInString), formatter.parse(dateInString2), test, test2);
-        System.out.println(test3.toString());
+        System.out.println(test3.toString());*/
     }
     
 }
