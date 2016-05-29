@@ -15,7 +15,9 @@ import java.util.Objects;
  * @author Thibault Daucourt
  */
 public class Course {
-
+    private static int compteur ;
+    
+    private int numero;// numero de gestion
     private int distance; //en km, distance >= 0
     private Date dateDebut; // date format a définir
     private Date dateFin; // date format a définir
@@ -48,9 +50,11 @@ public class Course {
     }
 
     public Course(int distance, Date dateDebut, Date dateFin) {
+        compteur += 1;
+        this.numero = compteur;
         this.distance = distance;
         this.dateDebut = dateDebut;
-        this.dateFin = dateFin; 
+        this.dateFin = dateFin;
     }
 
     public Course(int distance, Date dateDebut, Date dateFin,  Chauffeur chauffeur, Vehicule vehicule) {
@@ -149,6 +153,9 @@ public class Course {
         StringBuilder string = new StringBuilder();
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         
+        string.append("Course no ");
+        string.append(numero);       
+        string.append(", ");
         string.append(df.format(dateDebut));
         string.append(" - ");
         string.append(df.format(dateFin));

@@ -33,10 +33,10 @@ public class Application {
         //cs.start();
         
         Chauffeur test = new Chauffeur("12","jean","bonneau");
-        System.out.println(test.toString());
+        //System.out.println(test.toString());
         
         Vehicule test2 = new Vehicule(121,"opel saphira",42);
-        System.out.println(test2.toString());
+        //System.out.println(test2.toString());
         
         
         SimpleDateFormat formatter = new SimpleDateFormat("MM dd, yyyy HH:mm:ss");
@@ -44,6 +44,8 @@ public class Application {
         String dateInString2 = "07 07, 2013 12:15:56";
         Course test3 = new Course(42, formatter.parse(dateInString), formatter.parse(dateInString2), test, test2);
         System.out.println(test3.toString());
+        Course test4 = new Course(42, formatter.parse(dateInString), formatter.parse(dateInString2), test, test2);
+        System.out.println(test4.toString());
     }
     
 }
