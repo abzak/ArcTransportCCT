@@ -207,7 +207,7 @@ public class Console {
                 break;
             case 3:
                 System.out.println("Entrez matricule");
-                ctrl.supprimerVehicule(readValueInt());
+                ctrl.supprimerCourse(readValueInt());
                 break;
             case 4:
                 selectMenuPrincipal();

@@ -67,6 +67,10 @@ public class Controller {
         Chauffeur c = gf.getChauffeurs().findChauffeurByMatricule(matriculeChauffeur);
         gf.getCourses().addCourse(c, v, c1);
     }
+
+    public void supprimerCourse(int numero) {
+        gf.getCourses().removeCourseByNumero(numero);
+    }
     
     
     

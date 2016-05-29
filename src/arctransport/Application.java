@@ -49,11 +49,6 @@ public class Application {
         System.out.println(test3.toString());*/
         
         //test de init course invalide
-        try {
-             Course test5 = new Course(42, formatter.parse(dateInString2), formatter.parse(dateInString), test, test2);
-        } catch (Exception e) {
-            System.out.println("erreur init");
-        }
 
     }
     

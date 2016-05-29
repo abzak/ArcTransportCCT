@@ -15,6 +15,14 @@ import java.util.Objects;
  * @author Thibault Daucourt
  */
 public class Course {
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
     private static int compteur ;
     
     private int numero;// numero de gestion

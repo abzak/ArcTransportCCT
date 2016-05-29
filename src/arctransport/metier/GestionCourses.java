@@ -7,6 +7,7 @@ package arctransport.metier;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -59,6 +60,39 @@ public class GestionCourses {
             }
         });
         return courses;
+    }
+    
+    public Course selectCourseByNumero(int numero){
+        Course retour = null;
+        Boolean found = false;
+        for (Map.Entry<String, List<Course>> entry : mapCourseParChauffeur.entrySet()) {
+            String key = entry.getKey();
+            List<Course> value = entry.getValue();
+            for (Iterator<Course> iterator = value.iterator(); iterator.hasNext();) {
+                Course next = iterator.next();
+                if (next.getNumero() == numero) {
+                    retour = next;
+                    found = true;
+                }
+                if(found)
+                    break;
+            }
+            if(found)
+                    break;
+        }
+        if(!found){
+            throw new IllegalArgumentException("erreur matricule invalide !");
+        }
+        return retour;
+    }
+    
+    public void removeCourseByNumero(int numero) {
+        try {
+            Course crs = selectCourseByNumero(numero);
+            mapCourseParChauffeur.get(crs.getChauffeur().getMatricule()).remove(crs);
+        } catch (Exception e) {
+            System.out.println("ERREUR \"Le numéro de course selectionné est invalide !\"");
+        }
     }
 
 }
