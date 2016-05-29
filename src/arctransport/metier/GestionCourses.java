@@ -49,7 +49,7 @@ public class GestionCourses {
         mapCourseParChauffeur.put(matricule, new ArrayList<>());
     }
 
-    public List<Course> getCoursesByVehicule(String matricule) {
+    public List<Course> getCoursesByVehicule(int matricule) {
         List courses = new ArrayList<>();
         mapCourseParChauffeur.entrySet().stream().forEach((entry) -> {
             for (Course course : entry.getValue()) {
