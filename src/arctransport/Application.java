@@ -27,10 +27,10 @@ public class Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws ParseException {
-        GestionFlote gf = new GestionFlote();
+        /*GestionFlote gf = new GestionFlote();
         Controller ctrl = new Controller(gf);
         Console cs = new Console(ctrl);
-        cs.start();
+        cs.start();*/
         
         Chauffeur test = new Chauffeur("12","jean","bonneau");
         System.out.println(test.toString());
@@ -38,16 +38,22 @@ public class Application {
         Vehicule test2 = new Vehicule(121,"opel saphira",42);
         //System.out.println(test2.toString());
         
-        
         SimpleDateFormat formatter = new SimpleDateFormat("MM dd, yyyy HH:mm:ss");
 	String dateInString = "07 07, 2013 12:10:56";
         String dateInString2 = "07 07, 2013 12:15:56";
-        Course test3 = new Course(42, formatter.parse(dateInString), formatter.parse(dateInString2), test, test2);
+        /*Course test3 = new Course(42, formatter.parse(dateInString), formatter.parse(dateInString2), test, test2);
         System.out.println(test3.toString());
         Course test4 = new Course(42, formatter.parse(dateInString), formatter.parse(dateInString2), test, test2);
         System.out.println(test4.toString());
 
-        System.out.println(test3.toString());
+        System.out.println(test3.toString());*/
+        
+        //test de init course invalide
+        try {
+             Course test5 = new Course(42, formatter.parse(dateInString2), formatter.parse(dateInString), test, test2);
+        } catch (Exception e) {
+            System.out.println("erreur init");
+        }
 
     }
     

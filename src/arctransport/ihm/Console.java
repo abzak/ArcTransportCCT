@@ -180,25 +180,30 @@ public class Console {
                 break;
             case 2:
                 SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:MM");
+                int distance ;
+                Date dateD;
+                Date dateF;
                 
-                
-                Course c1 = new Course();
                 System.out.println("Entrez distance course");
-                c1.setDistance(readValueInt());
+                distance = readValueInt();
                 
-                System.out.println("Entrez date debut course");
-                c1.setDateDebut(formatter.parse(sc.nextLine()));
+                System.out.println("Entrez date debut course (dd-MM-yyyy:HH:MM)");
+                dateD =formatter.parse(sc.nextLine());
                 
-                System.out.println("Entrez date fin course");
-                c1.setDateFin(formatter.parse(sc.nextLine()));
+                System.out.println("Entrez date fin course (dd-MM-yyyy:HH:MM)");
+                dateF = formatter.parse(sc.nextLine());
                 
                 System.out.println("Entrez matricule chauffeur");
                 String matriculeChauffeur = sc.nextLine();
                 
                 System.out.println("Entrez matricule vehicule");
                 int matriculeVehicule = readValueInt();
-                
-                ctrl.ajoutCourse(c1, matriculeChauffeur, matriculeVehicule);
+                try {
+                    Course c1 = new Course(distance, dateD, dateD);
+                    ctrl.ajoutCourse(c1, matriculeChauffeur, matriculeVehicule);
+                } catch (Exception e) {
+                    System.out.println("ERREUR \"date de fin avant date début !!\"");
+                }
                 break;
             case 3:
                 System.out.println("Entrez matricule");
