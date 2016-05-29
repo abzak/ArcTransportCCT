@@ -23,7 +23,25 @@ public class Course {
     private Date dateFin; // date format a définir
     private Chauffeur chauffeur;
     private Vehicule vehicule;
+    
+    
+    public Course(int distance, Date dateDebut, Date dateFin) {
+        if(dateDebut.before(dateFin)){
+        compteur += 1;
+        this.numero = compteur;
+        this.distance = distance;
+        this.dateDebut = dateDebut;
+        this.dateFin = dateFin;
+        }else {
+            throw new IllegalArgumentException("date de fin avant date de début !");
+        }
+    }
 
+    public Course(int distance, Date dateDebut, Date dateFin,  Chauffeur chauffeur, Vehicule vehicule) {
+        this(distance, dateDebut, dateFin);
+        this.chauffeur = chauffeur;
+        this.vehicule = vehicule;
+    }
 
     /*Taxe de base
      0 - 5 km --> 10.-
@@ -47,20 +65,6 @@ public class Course {
     }
 
     public Course() {
-    }
-
-    public Course(int distance, Date dateDebut, Date dateFin) {
-        compteur += 1;
-        this.numero = compteur;
-        this.distance = distance;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-    }
-
-    public Course(int distance, Date dateDebut, Date dateFin,  Chauffeur chauffeur, Vehicule vehicule) {
-        this(distance, dateDebut, dateFin);
-        this.chauffeur = chauffeur;
-        this.vehicule = vehicule;
     }
 
     public int getDistance() {

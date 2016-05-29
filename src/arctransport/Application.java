@@ -32,13 +32,8 @@ public class Application {
         Console cs = new Console(ctrl);
         cs.start();
         
-<<<<<<< HEAD
         Chauffeur test = new Chauffeur("12","jean","bonneau");
-        //System.out.println(test.toString());
-=======
-        /*Chauffeur test = new Chauffeur("12","jean","bonneau");
         System.out.println(test.toString());
->>>>>>> origin/0.1
         
         Vehicule test2 = new Vehicule(121,"opel saphira",42);
         //System.out.println(test2.toString());
@@ -48,13 +43,12 @@ public class Application {
 	String dateInString = "07 07, 2013 12:10:56";
         String dateInString2 = "07 07, 2013 12:15:56";
         Course test3 = new Course(42, formatter.parse(dateInString), formatter.parse(dateInString2), test, test2);
-<<<<<<< HEAD
         System.out.println(test3.toString());
         Course test4 = new Course(42, formatter.parse(dateInString), formatter.parse(dateInString2), test, test2);
         System.out.println(test4.toString());
-=======
-        System.out.println(test3.toString());*/
->>>>>>> origin/0.1
+
+        System.out.println(test3.toString());
+
     }
     
 }
