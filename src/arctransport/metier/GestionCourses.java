@@ -7,7 +7,6 @@ package arctransport.metier;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -23,10 +22,15 @@ public class GestionCourses {
         this.mapCourseParChauffeur = new HashMap<>();
     }
 
-    public void addCourse(Chauffeur cf, Vehicule v, Course crs) {
-        crs.setChauffeur(cf);
-        crs.setVehicule(v);
-        mapCourseParChauffeur.get(cf.getMatricule()).add(crs);
+    public void addCourse(Chauffeur cf, Vehicule v, Course crs) throws IllegalArgumentException {
+        if (this.isCourseValide(crs)) {
+            crs.setChauffeur(cf);
+            crs.setVehicule(v);
+            mapCourseParChauffeur.get(cf.getMatricule()).add(crs);
+        }else{
+            throw new IllegalArgumentException("Course invalide, véhicule occupé !");
+        }
+        
 
     }
 
@@ -80,6 +84,15 @@ public class GestionCourses {
         } catch (Exception e) {
             System.out.println("ERREUR \"Le numéro de course selectionné est invalide !\"");
         }
+    }
+    
+    public Boolean isCourseValide(Course courseTested){
+        for (Course course : this.getCoursesByVehicule(courseTested.getVehicule().getMatricule())) {
+            if (course.isMeanwhile(courseTested)) {
+                return false;
+            }
+        }
+        return true;
     }
 
 }

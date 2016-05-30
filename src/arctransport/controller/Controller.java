@@ -62,7 +62,7 @@ public class Controller {
         return gf.getChiffreAffaireTotal();
     }
 
-    public void ajoutCourse(Course c1, String matriculeChauffeur, String matriculeVehicule) {
+    public void ajoutCourse(Course c1, String matriculeChauffeur, String matriculeVehicule)throws IllegalArgumentException  {
         Vehicule v = gf.getVehicules().findVehiculeByMatricule(matriculeVehicule);
         Chauffeur c = gf.getChauffeurs().findChauffeurByMatricule(matriculeChauffeur);
         gf.getCourses().addCourse(c, v, c1);
