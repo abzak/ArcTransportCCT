@@ -26,11 +26,13 @@ public class Course {
     private static int compteur ;
     
     private int numero;// numero de gestion
-    private int distance; //en km, distance >= 0
+    private int distance; //en km, distance >= 0 
     private Date dateDebut; // date format a définir
     private Date dateFin; // date format a définir
     private Chauffeur chauffeur;
     private Vehicule vehicule;
+    
+    
     
     
     public Course(int distance, Date dateDebut, Date dateFin) {
