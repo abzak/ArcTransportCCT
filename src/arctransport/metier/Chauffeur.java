@@ -89,15 +89,15 @@ public class Chauffeur {
     }
     
     public String toString(){
-        StringBuilder string = new StringBuilder();
+        StringBuilder chauffeurInfo = new StringBuilder();
         
-        string.append(matricule);
-        string.append(", ");
-        string.append(nom);
-        string.append(" ");
-        string.append(prenom);
+        chauffeurInfo.append(matricule);
+        chauffeurInfo.append(", ");
+        chauffeurInfo.append(nom);
+        chauffeurInfo.append(" ");
+        chauffeurInfo.append(prenom);
         
-        return string.toString();
+        return chauffeurInfo.toString();
     }
   
 }

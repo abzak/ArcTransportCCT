@@ -24,7 +24,7 @@ public class GestionVehicule {
         vehicules.add(v);
     }
 
-    public Vehicule findVehiculeByMatricule(int matricule) {
+    public Vehicule findVehiculeByMatricule(String matricule) {
         Vehicule vRecherche = null;
         for (Vehicule v : vehicules) {
             if (v.compareMatricule(matricule)) {
@@ -39,7 +39,7 @@ public class GestionVehicule {
         vehicules.remove(v);
     }
 
-    public void deleteVehiculeByMatricule(int matricule) {
+    public void deleteVehiculeByMatricule(String matricule) {
         deleteVehicule(findVehiculeByMatricule(matricule));
     }
 

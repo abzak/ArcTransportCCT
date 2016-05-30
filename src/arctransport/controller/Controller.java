@@ -15,39 +15,39 @@ import arctransport.metier.Vehicule;
  * @author zakariae.chentouf
  */
 public class Controller {
-    
+
     private GestionFlote gf;
 
     public Controller(GestionFlote gf) {
         this.gf = gf;
     }
 
-    public void afficherChauffeurs() {
-        gf.getChauffeurs().getChauffeurs().toString();
+    public String afficherChauffeurs() {
+        return gf.getChauffeurs().getChauffeurs().toString();
     }
 
-    public void afficherChauffeur(String matricule) {
-        gf.getChauffeurs().findChauffeurByMatricule(matricule);
+    public Chauffeur afficherChauffeur(String matricule) {
+        return gf.getChauffeurs().findChauffeurByMatricule(matricule);
     }
 
-    public void calculerChiffreAffaire(String matricule) {
-        gf.getChiffreAffaireByChauffeur(matricule);
+    public float calculerChiffreAffaire(String matricule) {
+        return gf.getChiffreAffaireByChauffeur(matricule);
     }
 
     public void supprimerChauffeur(String matricule) {
         gf.getChauffeurs().deleteChauffeurByMatricule(matricule);
     }
 
-    public void afficherVehicules() {
-        gf.getVehicules().getVehicules().toString();
+    public String afficherVehicules() {
+        return gf.getVehicules().getVehicules().toString();
     }
 
-    public void supprimerVehicule(int matricule) {
+    public void supprimerVehicule(String matricule) {
         gf.getVehicules().deleteVehiculeByMatricule(matricule);
     }
 
-    public void afficherCourses() {
-        gf.getCourses().gettAllCourses().toString();
+    public String afficherCourses() {
+        return gf.getCourses().gettAllCourses().toString();
     }
 
     public void ajoutVehicule(Vehicule v1) {
@@ -58,11 +58,11 @@ public class Controller {
         gf.ajouteChauffeur(chauf1);
     }
 
-    public void getChiffreAffaireTotal() {
-        gf.getChiffreAffaireTotal();
+    public float getChiffreAffaireTotal() {
+        return gf.getChiffreAffaireTotal();
     }
 
-    public void ajoutCourse(Course c1, String matriculeChauffeur, int matriculeVehicule) {
+    public void ajoutCourse(Course c1, String matriculeChauffeur, String matriculeVehicule) {
         Vehicule v = gf.getVehicules().findVehiculeByMatricule(matriculeVehicule);
         Chauffeur c = gf.getChauffeurs().findChauffeurByMatricule(matriculeChauffeur);
         gf.getCourses().addCourse(c, v, c1);
@@ -71,7 +71,5 @@ public class Controller {
     public void supprimerCourse(int numero) {
         gf.getCourses().removeCourseByNumero(numero);
     }
-    
-    
-    
+
 }

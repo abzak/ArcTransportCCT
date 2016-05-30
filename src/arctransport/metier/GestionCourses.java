@@ -50,7 +50,7 @@ public class GestionCourses {
         mapCourseParChauffeur.put(matricule, new ArrayList<>());
     }
 
-    public List<Course> getCoursesByVehicule(int matricule) {
+    public List<Course> getCoursesByVehicule(String matricule) {
         List courses = new ArrayList<>();
         mapCourseParChauffeur.entrySet().stream().forEach((entry) -> {
             for (Course course : entry.getValue()) {
@@ -61,31 +61,18 @@ public class GestionCourses {
         });
         return courses;
     }
-    
-    public Course selectCourseByNumero(int numero){
-        Course retour = null;
-        Boolean found = false;
+
+    public Course selectCourseByNumero(int numero) throws IllegalArgumentException{
         for (Map.Entry<String, List<Course>> entry : mapCourseParChauffeur.entrySet()) {
-            String key = entry.getKey();
-            List<Course> value = entry.getValue();
-            for (Iterator<Course> iterator = value.iterator(); iterator.hasNext();) {
-                Course next = iterator.next();
-                if (next.getNumero() == numero) {
-                    retour = next;
-                    found = true;
+            for (Course course : entry.getValue()) {
+                if (course.getNumero() == numero) {
+                    return course;
                 }
-                if(found)
-                    break;
             }
-            if(found)
-                    break;
         }
-        if(!found){
-            throw new IllegalArgumentException("erreur matricule invalide !");
-        }
-        return retour;
+        throw new IllegalArgumentException("Numero Inconnu");
     }
-    
+
     public void removeCourseByNumero(int numero) {
         try {
             Course crs = selectCourseByNumero(numero);

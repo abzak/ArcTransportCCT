@@ -15,14 +15,6 @@ import java.util.Objects;
  * @author Thibault Daucourt
  */
 public class Course {
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
     private static int compteur ;
     
     private int numero;// numero de gestion
@@ -35,7 +27,7 @@ public class Course {
     
     
     
-    public Course(int distance, Date dateDebut, Date dateFin) {
+    public Course(int distance, Date dateDebut, Date dateFin) throws IllegalArgumentException{
         if(dateDebut.before(dateFin)){
         compteur += 1;
         this.numero = compteur;
@@ -77,6 +69,18 @@ public class Course {
     public Course() {
     }
 
+        
+     // teste si le début de la course testé est avant lé fin de la course source
+    // et test si la fin de la course testé est après le début de la course source
+    // pour déterminer si elles se chevauchent
+    public Boolean isMeanwhile(Course courseTested){    
+         if(courseTested.dateDebut.before(dateFin) && courseTested.dateFin.after(dateDebut)){
+             return true;
+         }else{
+             return false;
+         }
+     }
+    
     public int getDistance() {
         return distance;
     }
@@ -116,7 +120,17 @@ public class Course {
     public void setVehicule(Vehicule vehicule) {
         this.vehicule = vehicule;
     }
+    
+    
+    public int getNumero() {
+        return numero;
+    }
 
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;
@@ -152,16 +166,6 @@ public class Course {
     }
     
     
-    // teste si le début de la course testé est avant lé fin de la course source
-    // et test si la fin de la course testé est après le début de la course source
-    // pour déterminer si elles se chevauchent
-    public Boolean isMeanwhile(Course courseTested){    
-         if(courseTested.dateDebut.before(dateFin) && courseTested.dateFin.after(dateDebut)){
-             return true;
-         }else{
-             return false;
-         }
-     }
     
     public String toString(){
         StringBuilder string = new StringBuilder();
@@ -180,4 +184,5 @@ public class Course {
         return string.toString();
     }
 
+    
 }

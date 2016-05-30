@@ -22,20 +22,20 @@ public class Vehicule {
          > 10 km --> 5.-
     */
     
-    private int matricule;
+    private String matricule;
     private String designation;
     private int prixMinute;
     
     public Vehicule() {}
 
-    public Vehicule(int matricule, String designation, int prixMinute) {
+    public Vehicule(String matricule, String designation, int prixMinute) {
         this();
         this.matricule = matricule;
         this.designation = designation;
         this.prixMinute = prixMinute;
     }
 
-    public int getMatricule() {
+    public String getMatricule() {
         return matricule;
     }
 
@@ -48,7 +48,7 @@ public class Vehicule {
     }
 
     
-    public void setMatricule(int matricule) {
+    public void setMatricule(String matricule) {
         this.matricule = matricule;
     }
 
@@ -86,7 +86,7 @@ public class Vehicule {
         return true;
     }
     
-    public boolean compareMatricule(int matriculeO){
+    public boolean compareMatricule(String matriculeO){
         boolean ok = false;
         if (matriculeO == this.matricule) {
             ok = true;

@@ -13,6 +13,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -49,6 +51,8 @@ public class Console {
         System.out.println("[5] -- Supprimer un chauffeur");
         System.out.println("[6] -- retour");
         System.out.println("");
+        selectMenuChauffeur();
+
     }
 
     public void afficheMenuCourse() {
@@ -59,6 +63,7 @@ public class Console {
         System.out.println("[3] -- Supprimer un Course");
         System.out.println("[4] -- retour");
         System.out.println("");
+        selectMenuCourse();
     }
 
     public void afficheMenuVehicule() {
@@ -69,6 +74,7 @@ public class Console {
         System.out.println("[3] -- Supprimer un Véhicule");
         System.out.println("[4] -- retour");
         System.out.println("");
+        selectMenuVehicule();
     }
 
     public void start() {
@@ -94,7 +100,7 @@ public class Console {
             case 3:
                 afficheMenuCourse();
                 break;
-            case 4:  
+            case 4:
                 ctrl.getChiffreAffaireTotal();
                 break;
             case 0:
@@ -103,12 +109,13 @@ public class Console {
                 System.out.println("Valeur erronee");
                 break;
         }
+        afficheMenuFlotte();
     }
 
     private void selectMenuChauffeur() {
         switch (readValueInt()) {
             case 1:
-                ctrl.afficherChauffeurs();
+                System.out.println(ctrl.afficherChauffeurs());
                 break;
             case 2:
                 System.out.println("Entrez matricule");
@@ -116,23 +123,24 @@ public class Console {
                 break;
             case 3:
                 System.out.println("Entrez matricule");
-                ctrl.afficherChauffeur(sc.nextLine());
+                System.out.println(ctrl.afficherChauffeur(sc.nextLine()));
                 break;
             case 4:
-                Chauffeur chauf1 = new Chauffeur();
+                Chauffeur nouveauChauffeur = new Chauffeur();
                 System.out.println("Entrez matricule chauffeur");
-                chauf1.setMatricule(sc.nextLine());
+                nouveauChauffeur.setMatricule(sc.nextLine());
                 System.out.println("Entrez nom chauffeur");
-                chauf1.setNom(sc.nextLine());
+                nouveauChauffeur.setNom(sc.nextLine());
                 System.out.println("Entrez prenom chauffeur");
-                chauf1.setPrenom(sc.nextLine());
-                ctrl.ajoutChauffeur(chauf1);
+                nouveauChauffeur.setPrenom(sc.nextLine());
+                ctrl.ajoutChauffeur(nouveauChauffeur);
                 break;
             case 5:
                 System.out.println("Entrez matricule");
                 ctrl.supprimerChauffeur(sc.nextLine());
                 break;
             case 6:
+                afficheMenuFlotte();
                 selectMenuPrincipal();
                 break;
             case 0:
@@ -141,26 +149,27 @@ public class Console {
                 System.out.println("Valeur erronee");
                 break;
         }
+        afficheMenuChauffeur();
     }
 
     private void selectMenuVehicule() {
         switch (readValueInt()) {
             case 1:
-                ctrl.afficherVehicules();
+                System.out.println(ctrl.afficherVehicules());
                 break;
             case 2:
-                Vehicule v1 = new Vehicule();
+                Vehicule nouveauVehicule = new Vehicule();
                 System.out.println("Entrez matricule vehicule");
-                v1.setMatricule(readValueInt());
+                nouveauVehicule.setMatricule(sc.nextLine());
                 System.out.println("Entrez designation vehicule");
-                v1.setDesignation(sc.nextLine());
-                System.out.println("Entrez prix/minute pour vehicule");
-                v1.setPrixMinute(readValueInt());
-                ctrl.ajoutVehicule(v1);
+                nouveauVehicule.setDesignation(sc.nextLine());
+                System.out.println("Entrez prix/minute pour vehicule (Seulelement chiffre plein)");
+                nouveauVehicule.setPrixMinute(readValueInt());
+                ctrl.ajoutVehicule(nouveauVehicule);
                 break;
             case 3:
                 System.out.println("Entrez matricule");
-                ctrl.supprimerVehicule(readValueInt());
+                ctrl.supprimerVehicule(sc.nextLine());
                 break;
             case 4:
                 selectMenuPrincipal();
@@ -171,40 +180,37 @@ public class Console {
                 System.out.println("Valeur erronee");
                 break;
         }
+        afficheMenuVehicule();
     }
 
-    private void selectMenuCourse() throws ParseException {
+    private void selectMenuCourse() {
         switch (readValueInt()) {
             case 1:
-                ctrl.afficherCourses();
+                System.out.println(ctrl.afficherCourses());
                 break;
             case 2:
-                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:MM");
-                int distance ;
-                Date dateD;
-                Date dateF;
-                
-                System.out.println("Entrez distance course");
-                distance = readValueInt();
-                
-                System.out.println("Entrez date debut course (dd-MM-yyyy:HH:MM)");
-                dateD =formatter.parse(sc.nextLine());
-                
-                System.out.println("Entrez date fin course (dd-MM-yyyy:HH:MM)");
-                dateF = formatter.parse(sc.nextLine());
-                
-                System.out.println("Entrez matricule chauffeur");
-                String matriculeChauffeur = sc.nextLine();
-                
-                System.out.println("Entrez matricule vehicule");
-                int matriculeVehicule = readValueInt();
                 try {
-                    Course c1 = new Course(distance, dateD, dateD);
-                    ctrl.ajoutCourse(c1, matriculeChauffeur, matriculeVehicule);
-                } catch (Exception e) {
-                    System.out.println("ERREUR \"date de fin avant date début !!\"");
+                    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy:HH:MM");
+                    Course nouvelCourse = new Course();
+                    String matriculeChauffeur = "";
+                    System.out.println("Entrez distance course");
+                    nouvelCourse.setDistance(readValueInt());
+                    System.out.println("Entrez date debut course (dd-MM-yyyy:HH:MM)");
+                    nouvelCourse.setDateDebut(formatter.parse(sc.nextLine()));
+                    System.out.println("Entrez date fin course (dd-MM-yyyy:HH:MM)");
+                    nouvelCourse.setDateFin(formatter.parse(sc.nextLine()));
+                    System.out.println("Entrez matricule chauffeur");
+                    matriculeChauffeur = sc.nextLine();
+                    System.out.println("Entrez matricule vehicule");
+                    String matriculeVehicule = sc.nextLine();
+                    ctrl.ajoutCourse(nouvelCourse, matriculeChauffeur, matriculeVehicule);
+                } catch (ParseException ex) {
+                    Logger.getLogger(Console.class.getName()).log(Level.INFO, "FORMAT DE DATE INCORRECTE!", ex);
+                } catch (IllegalArgumentException ex) {
+                    Logger.getLogger(Console.class.getName()).log(Level.INFO, ex.getMessage(), ex);
                 }
                 break;
+
             case 3:
                 System.out.println("Entrez matricule");
                 ctrl.supprimerCourse(readValueInt());
@@ -218,6 +224,7 @@ public class Console {
                 System.out.println("Valeur erronee");
                 break;
         }
+        afficheMenuCourse();
     }
 
 }
