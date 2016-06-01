@@ -9,6 +9,10 @@ import arctransport.metier.Chauffeur;
 import arctransport.metier.Course;
 import arctransport.metier.GestionFlote;
 import arctransport.metier.Vehicule;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,7 +23,28 @@ public class Controller {
     private GestionFlote gf;
 
     public Controller(GestionFlote gf) {
-        this.gf = gf;
+        try {
+            this.gf = gf;
+            // Donnée test;
+            Chauffeur chauffeurTest = new Chauffeur("12", "jean", "bonneau");
+            ajoutChauffeur(chauffeurTest);
+            Chauffeur chauffeurTest2 = new Chauffeur("2", "paul", "Conex");
+            ajoutChauffeur(chauffeurTest2);
+            Vehicule vehiculeTest = new Vehicule("121", "opel saphira", 1);
+            ajoutVehicule(vehiculeTest);
+            Vehicule vehiculeTest2 = new Vehicule("3", "MERCEDES BENZ EASY", 3);
+            ajoutVehicule(vehiculeTest2);
+            SimpleDateFormat formatter = new SimpleDateFormat("MM dd, yyyy HH:mm:ss");
+            String dateInString = "07 07, 2013 12:10:56";
+            String dateInString2 = "07 07, 2013 12:15:56";
+            Course courseTest1 = new Course(42, formatter.parse(dateInString), formatter.parse(dateInString2));
+            ajoutCourse(courseTest1, chauffeurTest.getMatricule(), vehiculeTest.getMatricule());
+            Course courseTest2 = new Course(43, formatter.parse(dateInString), formatter.parse(dateInString2));
+            ajoutCourse(courseTest2, chauffeurTest2.getMatricule(), vehiculeTest2.getMatricule());
+        } catch (ParseException ex) {
+            Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     public String afficherChauffeurs() {

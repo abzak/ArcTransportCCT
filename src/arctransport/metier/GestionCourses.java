@@ -41,7 +41,7 @@ public class GestionCourses {
     public List<Course> gettAllCourses() {
         List courses = new ArrayList<>();
         mapCourseParChauffeur.entrySet().stream().forEach((entry) -> {
-            courses.add(entry.getValue());
+            courses.add(((ArrayList<Course>)entry.getValue()).get(0));
         });
         return courses;
     }

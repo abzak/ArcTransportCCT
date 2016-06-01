@@ -95,16 +95,17 @@ public class Vehicule {
     }
     
     public String toString(){
-        StringBuilder string = new StringBuilder();
+        StringBuilder vehiculeInformation = new StringBuilder();
         
-        string.append(matricule);
-        string.append(", ");
-        string.append(designation);
-        string.append(", ");
-        string.append(prixMinute);
-        string.append(" chf/min");
+        vehiculeInformation.append(matricule);
+        vehiculeInformation.append(", ");
+        vehiculeInformation.append(designation);
+        vehiculeInformation.append(", ");
+        vehiculeInformation.append(prixMinute);
+        vehiculeInformation.append(" chf/min");
+        vehiculeInformation.append(System.getProperty("line.separator"));
         
-        return string.toString();
+        return vehiculeInformation.toString();
     }
 
     

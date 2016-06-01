@@ -11,7 +11,6 @@ import arctransport.metier.Course;
 import arctransport.metier.Vehicule;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,6 +38,7 @@ public class Console {
         System.out.println("[4] -- Calculer le chiffer d'affaire total");
         System.out.println("[0] -- Quitter");
         System.out.println("");
+        selectMenuPrincipal();
     }
 
     public void afficheMenuChauffeur() {
@@ -64,6 +64,7 @@ public class Console {
         System.out.println("[4] -- retour");
         System.out.println("");
         selectMenuCourse();
+    
     }
 
     public void afficheMenuVehicule() {
@@ -79,7 +80,6 @@ public class Console {
 
     public void start() {
         afficheMenuFlotte();
-        selectMenuPrincipal();
 
     }
 
@@ -101,7 +101,7 @@ public class Console {
                 afficheMenuCourse();
                 break;
             case 4:
-                ctrl.getChiffreAffaireTotal();
+                System.out.println("CHIFFRE D'AFFAIRE TOTAL : " +ctrl.getChiffreAffaireTotal());
                 break;
             case 0:
                 System.exit(0);
@@ -119,7 +119,7 @@ public class Console {
                 break;
             case 2:
                 System.out.println("Entrez matricule");
-                ctrl.calculerChiffreAffaire(sc.nextLine());
+                System.out.println("Chiffre d'affaire : " + ctrl.calculerChiffreAffaire(sc.nextLine()));
                 break;
             case 3:
                 System.out.println("Entrez matricule");
@@ -141,7 +141,6 @@ public class Console {
                 break;
             case 6:
                 afficheMenuFlotte();
-                selectMenuPrincipal();
                 break;
             case 0:
                 System.exit(0);
@@ -172,7 +171,7 @@ public class Console {
                 ctrl.supprimerVehicule(sc.nextLine());
                 break;
             case 4:
-                selectMenuPrincipal();
+                afficheMenuFlotte();
                 break;
             case 0:
                 System.exit(0);
@@ -216,7 +215,7 @@ public class Console {
                 ctrl.supprimerCourse(readValueInt());
                 break;
             case 4:
-                selectMenuPrincipal();
+                afficheMenuFlotte();
                 break;
             case 0:
                 System.exit(0);

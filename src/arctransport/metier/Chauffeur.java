@@ -90,13 +90,16 @@ public class Chauffeur {
     
     public String toString(){
         StringBuilder chauffeurInfo = new StringBuilder();
-        
+        chauffeurInfo.append("Matricule : ");
         chauffeurInfo.append(matricule);
         chauffeurInfo.append(", ");
+        chauffeurInfo.append("Nom : ");
         chauffeurInfo.append(nom);
         chauffeurInfo.append(" ");
+        chauffeurInfo.append("Prenom : ");
         chauffeurInfo.append(prenom);
-        
+        chauffeurInfo.append(System.getProperty("line.separator"));
+
         return chauffeurInfo.toString();
     }
   

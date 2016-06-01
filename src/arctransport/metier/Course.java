@@ -168,20 +168,21 @@ public class Course {
     
     
     public String toString(){
-        StringBuilder string = new StringBuilder();
+        StringBuilder courseInformation = new StringBuilder();
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         
-        string.append("Course no ");
-        string.append(numero);       
-        string.append(", ");
-        string.append(df.format(dateDebut));
-        string.append(" - ");
-        string.append(df.format(dateFin));
-        string.append(" / ");
-        string.append(distance);
-        string.append(" km");
+        courseInformation.append("Course no ");
+        courseInformation.append(numero);       
+        courseInformation.append(", ");
+        courseInformation.append(df.format(dateDebut));
+        courseInformation.append(" - ");
+        courseInformation.append(df.format(dateFin));
+        courseInformation.append(" / distance de :");
+        courseInformation.append(distance);
+        courseInformation.append(" km");
+        courseInformation.append(System.getProperty("line.separator"));
         
-        return string.toString();
+        return courseInformation.toString();
     }
 
     
